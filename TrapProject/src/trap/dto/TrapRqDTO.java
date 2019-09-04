@@ -1,4 +1,4 @@
-package traprq.DTO;
+package trap.dto;
 
 import java.time.LocalDate;
 
