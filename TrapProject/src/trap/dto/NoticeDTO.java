@@ -1,4 +1,4 @@
-package notice.dto;
+package trap.dto;
 import java.time.LocalDate;
 
 public class NoticeDTO {

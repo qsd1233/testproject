@@ -1,4 +1,4 @@
-package gallery.dto;
+package trap.dto;
 import java.time.LocalDate;
 
 public class GalleryDTO {
