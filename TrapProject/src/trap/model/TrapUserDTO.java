@@ -1,12 +1,11 @@
-package trap.dto;
+package trap.model;
 
 public class TrapUserDTO {
 	private int userIdx,userAge;
 	private String userName,userId,userPwd,userAdd,userPhone,userEmail,userNick,userBirth;
 	
-	public TrapUserDTO(int userIdx, int userAge, String userName, String userId, String userPwd, String userAdd,
+	public TrapUserDTO(int userAge, String userName, String userId, String userPwd, String userAdd,
 			String userPhone, String userEmail, String userNick, String userBirth) {
-		this.userIdx = userIdx;
 		this.userAge = userAge;
 		this.userName = userName;
 		this.userId = userId;

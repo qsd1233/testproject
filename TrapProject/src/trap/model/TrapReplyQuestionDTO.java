@@ -1,4 +1,4 @@
-package trap.dto;
+package trap.model;
 
 import java.time.LocalDate;
 
