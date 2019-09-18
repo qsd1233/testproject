@@ -22,6 +22,7 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:/trapconfig/trapUserMapper.xml</value>
+				<value>classpath:/trapconfig/trapBoardMapper.xml</value>
 			</list>
 		</property>
 	</bean>

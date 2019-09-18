@@ -8,5 +8,6 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="trap.model.TrapUserDTO" alias="user"/>
+		<typeAlias type="trap.model.NoticeDTO" alias="notice"/>
 	</typeAliases>
 </configuration>  

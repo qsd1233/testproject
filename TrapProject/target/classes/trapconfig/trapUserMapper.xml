@@ -6,4 +6,31 @@
 	<insert id="insertUser" parameterType="user">
 		insert into trapuser values(0,#{userName},#{userId},#{userPwd},#{userAdd},#{userPhone},#{userEmail},#{userNick},#{userBirth},#{userAge})
 	</insert>
+	<select id="idCheck" parameterType="String" resultType="Integer">
+		select COUNT(*) from trapuser where user_id = #{userId}
+	</select>
+	<select id="pwdCheck" parameterType="String" resultType="Integer">
+		select COUNT(user_pwd) from trapuser where user_pwd = #{userPwd}
+	</select>
+	<select id="emailCheck" parameterType="String" resultType="Integer">
+		select COUNT(user_email) from trapuser where user_email = #{userEmail}
+	</select>
+	<select id="nickCheck" parameterType="String" resultType="Integer">
+		select COUNT(user_nick) from trapuser where user_nick = #{userNick}
+	</select>
+	<select id="loginSelect" parameterType="map" resultType="user">
+		select * from trapuser where user_id = #{userId} and user_pwd = #{userPwd}
+	</select>
+	<select id="searchId" parameterType="String" resultType="user">
+		select user_id from trapuser where user_email = #{userEmail}
+	</select>
+	<select id="selectEmail" parameterType="map" resultType="user">
+		select * from trapuser where user_id = #{userId} and user_email = #{userEmail}
+	</select>
+	<update id="randomPwd" parameterType="map">
+		update trapuser set user_pwd = #{userPwd} where user_id = #{userId}
+	</update>
+	<update id="userUpdate" parameterType="map">
+		update trapuser set user_pwd = #{userPwd}, user_add = #{userAdd}, user_phone = #{userPhone}, user_email = #{userEmail}, user_nick = #{userNick} where user_id = #{userId}
+	</update>
 </mapper>  

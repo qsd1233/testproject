@@ -4,6 +4,18 @@ public class TrapUserDTO {
 	private int userIdx,userAge;
 	private String userName,userId,userPwd,userAdd,userPhone,userEmail,userNick,userBirth;
 	
+	public TrapUserDTO() {
+	}
+
+	public TrapUserDTO(String userId, String userPwd) {
+		this.userId = userId;
+		this.userPwd = userPwd;
+	}
+	
+	public TrapUserDTO(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
 	public TrapUserDTO(int userAge, String userName, String userId, String userPwd, String userAdd,
 			String userPhone, String userEmail, String userNick, String userBirth) {
 		this.userAge = userAge;

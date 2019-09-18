@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="trap.model.TrapBoardMapper">
+	<select id="noticeAll" resultType="notice">
+		select * from trapn order by n_id desc
+	</select>
+	<select id="noticeOne" parameterType="Integer" resultType="notice">
+		select * from trapn where n_id = #{nId}
+	</select>
+</mapper>
