@@ -1,0 +1,37 @@
+	* { margin: 0; padding: 0; }
+	
+	#mainDiv { border: 1px solid black; width: 900px; height: 1100px; 
+			   position: relative; margin:auto;}
+			   
+	#nboad { width: 900px; height: 300px; border: 1px solid black; position: relative; }
+	#sboad { width: 900px; height: 300px; border: 1px solid black; position: relative; }
+	
+    #topDiv { border : 1px solid black; width: 900px; height: 160px;
+              position: relative; margin:auto; 
+              overflow: hidden;}
+      
+    #loginDiv { width: 450px; height: 30px; 
+               position: relative; margin:auto; margin-right: -5% }
+    #joinDiv{ width: 600px; height: 500px; 
+			  margin:auto; border: 2px solid #add8e6; overflow: hidden; 
+			  margin-top: 25%;
+			  }
+   	#menuTable { width: 900px; height: 30px; border: 1px solid black; border-collapse: collapse;}
+   	#menuTable th { border: 1px solid black; border-collapse: collapse; }
+   	a:link{ color:black; text-decoration: none; }
+   	a:visited {color: black; text-decoration: none; }
+	a:hover { color: black; text-decoration: none; }
+	
+	#basic-table td { text-align: center; }
+	#basic-table th { background-color: #ffeecc; } 
+	#basic-table th { border: 1px solid black; border-collapse: collapse; }
+	#basic-table td { border: 1px solid black; border-collapse: collapse; }
+	#basic-table tr:nth-child(2n+1) { background-color : #d2ff4d; }
+	#basic-table tr:nth-child(2n) { background-color : #80bfff; }
+	#totalDiv {	width: 600px; height: 700px; 
+				margin:auto; overflow: hidden; }
+	#noticeDiv { background-color: #ffff99; overflow: hidden; }
+	#storyDiv { background-color: #ffff99; overflow: hidden; }  
+	
+	.ninput {border:none;}
+	#ncontent {margin:auto; width: 600px; height: 500px; border: 2px solid #add8e6; }      

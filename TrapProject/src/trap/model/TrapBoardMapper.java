@@ -6,4 +6,5 @@ import java.util.List;
 public interface TrapBoardMapper {
 	public List<NoticeDTO> noticeAll();
 	public NoticeDTO noticeOne(int nId);
+	public List<StoryDTO> storyAll();
 }

@@ -13,5 +13,5 @@ public interface TrapUserMapper {
 	public TrapUserDTO searchId(String userEmail);
 	public TrapUserDTO selectEmail(@Param("userId") String userId, @Param("userEmail") String userEmail);
 	public void randomPwd(@Param("userPwd") String userPwd, @Param("userId") String userId);
-	public void userUpdate(@Param("userPwd")String userPwd, @Param("userAdd")String userAdd, @Param("userPhone")String userPhone, @Param("userEmail")String userEmail, @Param("userNick")String userNick, @Param("userId")String userId);
+	public void userUpdate(@Param("userPwd")String userPwd, @Param("userAdd1")String userAdd1,@Param("userAdd2")String userAdd2,@Param("userAdd3")String userAdd3,@Param("userAddnum")int userAddnum, @Param("userPhone")String userPhone, @Param("userEmail")String userEmail, @Param("userNick")String userNick, @Param("userId")String userId);
 }

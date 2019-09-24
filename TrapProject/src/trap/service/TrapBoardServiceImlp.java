@@ -5,23 +5,29 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import trap.model.NoticeDAO;
+import trap.model.TrapBoardDAO;
 import trap.model.NoticeDTO;
+import trap.model.StoryDTO;
 
 @Service
 public class TrapBoardServiceImlp implements TrapBoardService{
 	
 	@Autowired
-	private NoticeDAO noticeDao;
+	private TrapBoardDAO boardDao;
 	
 	@Override
 	public List<NoticeDTO> noticeAll() {
-		return noticeDao.noticeAll();
+		return boardDao.noticeAll();
 	}
 
 	@Override
 	public NoticeDTO noticeOne(int nId) {
-		return noticeDao.noticeOne(nId);
+		return boardDao.noticeOne(nId);
+	}
+
+	@Override
+	public List<StoryDTO> storyAll() {
+		return boardDao.storyAll();
 	}
 	
 }

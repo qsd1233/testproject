@@ -1,34 +1,43 @@
 package trap.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class QuestionDTO {
-	private int id;
-	private String title;
-	private String content;
-	private int rqcount;
-	private String nick;
-	private LocalDate date;
+	private int qId;
+	private String qTitle;
+	private String qContent;
+	private int qRqcount;
+	private String qNick;
+	private Date qDate;
 	
-	public int getId() {return id;}
-	public void setId(int id) {this.id = id;}
-	public String getTitle() {return title;}
-	public void setTitle(String title) {this.title = title;}
-	public String getContent() {return content;}
-	public void setContent(String content) {this.content = content;}
-	public int getRqcount() {return rqcount;}
-	public void setRqcount(int rqcount) {this.rqcount = rqcount;}
-	public String getNick() {return nick;}
-	public void setNick(String nick) {this.nick = nick;}
-	public LocalDate getDate() {return date;}
-	public void setDate(LocalDate date) {this.date = date;}
-	public QuestionDTO(int id, String title, String content, int rqcount, String nick, LocalDate date) {
-		this.id = id;
-		this.title = title;
-		this.content = content;
-		this.rqcount = rqcount;
-		this.nick = nick;
-		this.date = date;
+	public QuestionDTO() {}
+
+	public QuestionDTO(int qId, String qTitle, String qContent, int qRqcount, String qNick, Date qDate) {
+		this.qId = qId;
+		this.qTitle = qTitle;
+		this.qContent = qContent;
+		this.qRqcount = qRqcount;
+		this.qNick = qNick;
+		this.qDate = qDate;
 	}
+
+	public int getqId() {return qId;}
+	public void setqId(int qId) {this.qId = qId;}
+	public String getqTitle() {return qTitle;}
+	public void setqTitle(String qTitle) {this.qTitle = qTitle;}
+	public String getqContent() {return qContent;}
+	public void setqContent(String qContent) {this.qContent = qContent;}
+	public int getqRqcount() {return qRqcount;}
+	public void setqRqcount(int qRqcount) {this.qRqcount = qRqcount;}
+	public String getqNick() {return qNick;}
+	public void setqNick(String qNick) {this.qNick = qNick;}
+	public Date getqDate() {return qDate;}
+	public void setqDate(Date qDate) {this.qDate = qDate;}
+	
+	
+	
+	
+	
+	
 	
 }

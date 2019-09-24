@@ -11,12 +11,12 @@
   crossorigin="anonymous"></script>
 <script type="text/javascript">
 	function logout() {
-		history.back();
+		location.href = "logout";
 	}
 </script>
 </head>
 <body>
-	<form action="userupdate">
+	<form action="userupdate" method="post">
 	<div>
 		<p>${user.userNick } 님 어서오세요!</p>
 		<input type="submit" value="정보수정">

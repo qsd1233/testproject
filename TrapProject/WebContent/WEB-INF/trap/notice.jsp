@@ -8,17 +8,20 @@
 <head>
 <meta charset="UTF-8">
 <title>공지사항</title>
+<link rel="stylesheet" type="text/css" href="css/menuCSS.css">
 </head>
 <body>
-  <div id="wrap-admin">
+<jsp:include page="traplogin.jsp"></jsp:include>
+<div id="mainDiv">
+  <div id="noticeDiv">
     <header>
       <div>
         <h1>공지사항</h1>
       </div>
     </header>
   </div>
-    <div class="contents">
-      <table class="basic-table">
+    <div id="totalDiv">
+      <table id="basic-table">
         <colgroup>
           <col style="width: 10%;">
           <col style="width: 45%;">
@@ -44,5 +47,6 @@
 		</c:forEach>
       </table>
      </div>
+ </div>    
 </body>
 </html>

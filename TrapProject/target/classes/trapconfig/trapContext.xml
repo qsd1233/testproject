@@ -30,5 +30,8 @@
 		<property name="basePackage" value="trap.model"/>
 		<property name="annotationClass" value="trap.model.MyTrap"/>
 	</bean>
+	
 	<mvc:annotation-driven/>
+	<mvc:default-servlet-handler/>
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"></mvc:resources>
 </beans>

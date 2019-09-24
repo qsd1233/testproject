@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import trap.model.NoticeDTO;
+import trap.model.StoryDTO;
 import trap.model.TrapUserDTO;
 import trap.service.TrapBoardService;
 import trap.service.TrapUserService;
@@ -29,9 +30,9 @@ public class TrapController {
 	private TrapBoardService trapBoardService;
 	
 	@RequestMapping("/init")
-	public String trapUserJoin(String userName, String userId, String userPwd, String userAdd, 
-			String userPhone, String userEmail, String userNick, String userBirth, int userAge, Model model) {
-		TrapUserDTO user = new TrapUserDTO(userAge, userName, userId, userPwd, userAdd, userPhone, userEmail, userNick, userBirth);
+	public String trapUserJoin(String userName, String userId, String userPwd, String userAdd1,String userAdd2,String userAdd3, 
+			String userPhone, String userEmail, String userNick, String userBirth, int userAge,int userAddnum, Model model) {
+		TrapUserDTO user = new TrapUserDTO(userAge, userAddnum, userName, userId, userPwd, userAdd1, userAdd2, userAdd3, userPhone, userEmail, userNick, userBirth);		
 		model.addAttribute("user", user);
 		return "/WEB-INF/trap/join.jsp";
 	}
@@ -46,7 +47,6 @@ public class TrapController {
 	public Map<Object, Object> idCheck(@RequestBody String userId) {
 		int count = 0;
 		Map<Object, Object> map = new HashMap<Object, Object>();
-		
 		count = trapUserService.idCheck(userId);
 		map.put("cnt", count);
 		return map;
@@ -82,9 +82,8 @@ public class TrapController {
 	}
 	@RequestMapping("/login")
 	public ModelAndView login(String userId, String userPwd, HttpSession session, HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("/WEB-INF/trap/login.jsp");
+		ModelAndView mav = new ModelAndView("/WEB-INF/trap/menu.jsp");
 		TrapUserDTO user = trapUserService.loginSelect(userId, userPwd);
-		session = request.getSession(true);
 		session.setAttribute("user", user);
 		return mav;
 	}
@@ -112,21 +111,48 @@ public class TrapController {
 		return "/WEB-INF/trap/userupdate.jsp";
 	}
 	@RequestMapping("/goupdate")
-	public String goUpdate(String userPwd, String userAdd, String userPhone, String userEmail, String userNick, String userId, Model model) {
-		trapUserService.userUpdate(userPwd, userAdd, userPhone, userEmail, userNick, userId);
+	public String goUpdate(String userPwd, String userAdd1,String userAdd2,String userAdd3,int userAddnum, String userPhone, String userEmail, String userNick, String userId, Model model) {
+		trapUserService.userUpdate(userPwd, userAdd1, userAdd2, userAdd3, userAddnum, userPhone, userEmail, userNick, userId);
 		return "/WEB-INF/trap/updategood.jsp";
 	}
 	@RequestMapping("/not")
-	public String noticeList(Model model) {
+	public String noticeList(String userId, String userPwd, Model model) {
 		List<NoticeDTO> nott = trapBoardService.noticeAll();
 		model.addAttribute("notice", nott);
 		return "/WEB-INF/trap/notice.jsp";
 	}
+	@RequestMapping("/story")
+	public String storyList(Model model) {
+		List<StoryDTO> story = trapBoardService.storyAll();
+		model.addAttribute("story", story);
+		return "/WEB-INF/trap/story.jsp";
+	}
+		
 	@RequestMapping("/nread")
 	public String noticeRead(int nId, Model model) {
 		NoticeDTO read = trapBoardService.noticeOne(nId);
 		model.addAttribute("read", read);
 		return "/WEB-INF/trap/noticeread.jsp";
 	}
-	
+	@RequestMapping("/updateback")
+	public String upDateback() {
+		return "/WEB-INF/trap/login.jsp";
+	}
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "/WEB-INF/trap/menu.jsp";
+	}
+	@RequestMapping("/main")
+	public String mian() {
+		return "/WEB-INF/trap/menu.jsp";
+	}
+	@RequestMapping("/join")
+	public String join() {
+		return "/WEB-INF/trap/trapjoin.jsp";
+	}
+	@RequestMapping("/back")
+	public String back() {
+		return "/WEB-INF/trap/menu.jsp";
+	}
 }

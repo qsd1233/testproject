@@ -28,8 +28,10 @@ public class TrapUserDAOImlp implements TrapUserDAO{
 	@Override
 	public void randomPwd(String userPwd, String userId) {trapuserMapper.randomPwd(userPwd, userId);}
 	@Override
-	public void userUpdate(String userPwd, String userAdd, String userPhone, String userEmail, String userNick, String userId) {
-		trapuserMapper.userUpdate(userPwd, userAdd, userPhone, userEmail, userNick, userId);
+	public void userUpdate(String userPwd, String userAdd1, String userAdd2, String userAdd3, int userAddnum,
+			String userPhone, String userEmail, String userNick, String userId) {
+		trapuserMapper.userUpdate(userPwd, userAdd1, userAdd2, userAdd3, userAddnum, userPhone, userEmail, userNick, userId);
 	}
+	
 
 }

@@ -24,8 +24,17 @@
 			<td><input type="password" value="${user.userPwd }" readonly name="userPwd"></td>
 		</tr>
 		<tr>
-			<th>주소 : </th>
-			<td><input type="text" value="${user.userAdd }" readonly name="userAdd"></td>
+			<th>우편번호 : </th>
+			<td><input type="text" value="${user.userAddnum }" readonly name="userAddnum"></td>
+		</tr>
+		<tr>
+			<th>도로명주소 : </th>
+			<td><input type="text" value="${user.userAdd1 }" readonly name="userAdd1"></td>
+		</tr>
+		<tr>
+			<th>상세주소 : </th>
+			<td><input type="text" value="${user.userAdd2 }" readonly name="userAdd2"></td>
+			<td><input type="text" value="${user.userAdd3 }" readonly name="userAdd3"></td>
 		</tr>
 		<tr>
 			<th>전화번호 : </th>

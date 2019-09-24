@@ -77,8 +77,9 @@ public class TrapUserServiceImlp implements TrapUserService{
 		
 	}
 	@Override
-	public void userUpdate(String userPwd, String userAdd, String userPhone, String userEmail, String userNick, String userId) {
-		trapUserDao.userUpdate(userPwd, userAdd, userPhone, userEmail, userNick, userId);
+	public void userUpdate(String userPwd, String userAdd1, String userAdd2, String userAdd3, int userAddnum,
+			String userPhone, String userEmail, String userNick, String userId) {
+		trapUserDao.userUpdate(userPwd, userAdd1, userAdd2, userAdd3, userAddnum, userPhone, userEmail, userNick, userId);
 	}
 	
 }

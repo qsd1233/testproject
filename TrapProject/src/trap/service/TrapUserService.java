@@ -13,5 +13,5 @@ public interface TrapUserService {
 	public TrapUserDTO selectEmail(String userId, String userEmail);
 	public void sendEmail(TrapUserDTO user);
 	public void randomPwd(String userPwd, String userId);
-	public void userUpdate(String userPwd, String userAdd, String userPhone, String userEmail, String userNick, String userId);
+	public void userUpdate(String userPwd,String userAdd1,String userAdd2,String userAdd3,int userAddnum,String userPhone,String userEmail,String userNick,String userId);
 }

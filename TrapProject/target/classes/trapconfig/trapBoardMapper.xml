@@ -9,4 +9,10 @@
 	<select id="noticeOne" parameterType="Integer" resultType="notice">
 		select * from trapn where n_id = #{nId}
 	</select>
+	<select id="storyAll" resultType="story">
+		select * from traps order by s_id desc
+	</select>
+	<select id="storyOne" parameterType="Integer" resultType="story">
+		select * from traps where s_id = #{sId}
+	</select>
 </mapper>

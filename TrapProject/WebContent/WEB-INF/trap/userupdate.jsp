@@ -23,51 +23,7 @@
 			var num = 1;
 			if(valdate() == false){
 				return re;
-			}
-			alert("실행하나");
-			$.ajax({
-				type: 'POST',
-				data: useremail,
-				async: false,
-				url: "emailck",
-				dataType: "json",
-				contentType: "application/json; charset=UTF-8",
-				success: function(data){
-					if(data.cnt>0){
-						alert("존재하는 이메일입니다.");
-						$("#useremail").focus();
-						num = 0;
-					} else {
-						re = true;
-					}
-				},
-				error: function(error){
-					alert("error : "+error);
-				}
-			})
-			if(num == 0){
-				return re;
-			}
-			$.ajax({
-				type: 'POST',
-				data: usernick,
-				async: false,
-				url: "nickck",
-				dataType: "json",
-				contentType: "application/json; charset=UTF-8",
-				success: function(data){
-					if(data.cnt>0){
-						alert("존재하는 닉네임 입니다.");
-						$("#usernick").focus();
-						re=false;
-					} else{
-						re = true;
-					}
-				},
-				error: function(error){
-					alert("error : "+error);
-				}
-			})
+			}else{re=true;}
 			return re;
 		});
 	});
@@ -102,6 +58,22 @@
 			what.focus();
 		}
 	};
+	function goPopup(){
+		// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+    	var pop = window.open("doroadd.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+    
+		// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+    	//var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+	}
+	/** API 서비스 제공항목 확대 (2017.02) **/
+	function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
+						, detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
+		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+		document.update.roadAddrPart1.value = roadAddrPart1;
+		document.update.roadAddrPart2.value = roadAddrPart2;
+		document.update.addrDetail.value = addrDetail;
+		document.update.zipNo.value = zipNo;
+	}
 </script>
 </head>
 <body>
@@ -123,21 +95,40 @@
 			<th>암호 확인 : </th>
 			<td><input type="password" name="pwdcheck"></td>
 		</tr>
-		<tr>
-			<th>주소 : </th>
-			<td><input type="text" value="${user.userAdd }" name="userAdd"></td>
-		</tr>
+			<col style="width:20%"><col>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>우편번호</th>
+					<td>
+					    <input type="hidden" id="confmKey" name="confmKey" value=""  >
+						<input type="text" id="zipNo" name="userAddnum" readonly style="width:100px" value="${user.userAddnum }">
+						<input type="button"  value="주소검색" onclick="goPopup();">
+					</td>
+				</tr>
+				<tr>
+					<th>도로명주소</th>
+					<td><input type="text" id="roadAddrPart1" name="userAdd1" style="width:85%" value="${user.userAdd1 }"></td>
+				</tr>
+				<tr>
+					<th>상세주소</th>
+					<td>
+						<input type="text" id="addrDetail" name="userAdd2" style="width:40%" value="${user.userAdd2 }">
+						<input type="text" id="roadAddrPart2" name="userAdd3" style="width:40%" value="${user.userAdd3 }">
+					</td>
+				</tr>
+			</tbody>
 		<tr>
 			<th>전화번호 : </th>
 			<td><input type="text" value="${user.userPhone }" name="userPhone"></td>
 		</tr>
 		<tr>
 			<th>이메일 : </th>
-			<td><input id="useremail" type="text" value="${user.userEmail }" name="userEmail"></td>
+			<td><input id="useremail" type="text" value="${user.userEmail }" readonly name="userEmail"></td>
 		</tr>
 		<tr>
 			<th>닉네임 : </th>
-			<td><input id="usernick" type="text" value="${user.userNick }" name="userNick"></td>
+			<td><input id="usernick" type="text" value="${user.userNick }" readonly name="userNick"></td>
 		</tr>
 		<tr>
 			<th>생년월일 : </th>

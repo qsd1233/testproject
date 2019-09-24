@@ -1,63 +1,41 @@
 package trap.model;
-import java.time.LocalDate;
+import java.util.Date;
 
 public class GalleryDTO {
-	private int g_id;
-	private String g_title;
-	private String g_content;
-	private int g_rgcount;
-	private String g_nick;
-	private LocalDate g_date;
-	public int getG_id() {
-		return g_id;
-	}
-	public void setG_id(int g_id) {
-		this.g_id = g_id;
-	}
-	public String getG_title() {
-		return g_title;
-	}
-	public void setG_title(String g_title) {
-		this.g_title = g_title;
-	}
-	public String getG_content() {
-		return g_content;
-	}
-	public void setG_content(String g_content) {
-		this.g_content = g_content;
-	}
-	public int getG_rgcount() {
-		return g_rgcount;
-	}
-	public void setG_rgcount(int g_rgcount) {
-		this.g_rgcount = g_rgcount;
-	}
-	public String getG_nick() {
-		return g_nick;
-	}
-	public void setG_nick(String g_nick) {
-		this.g_nick = g_nick;
-	}
-	public LocalDate getG_date() {
-		return g_date;
-	}
-	public void setG_date(LocalDate g_date) {
-		this.g_date = g_date;
-	}
+	private int gId;
+	private String gTitle;
+	private String gContent;
+	private int gRgcount;
+	private String gNick;
+	private Date gDate;
 	
-	@Override
-	public String toString() {
-		return "GalleryDTO [g_id=" + g_id + ", g_title=" + g_title + ", g_content=" + g_content + ", g_rgcount="
-				+ g_rgcount + ", g_nick=" + g_nick + ", g_date=" + g_date + "]";
+	public GalleryDTO() {}
+
+	public GalleryDTO(int gId, String gTitle, String gContent, int gRgcount, String gNick, Date gDate) {
+		this.gId = gId;
+		this.gTitle = gTitle;
+		this.gContent = gContent;
+		this.gRgcount = gRgcount;
+		this.gNick = gNick;
+		this.gDate = gDate;
 	}
+
+	public int getgId() {return gId;}	
+	public void setgId(int gId) {this.gId = gId;}
+	public String getgTitle() {return gTitle;}
+	public void setgTitle(String gTitle) {this.gTitle = gTitle;}
+	public String getgContent() {return gContent;}
+	public void setgContent(String gContent) {this.gContent = gContent;}
+	public int getgRgcount() {return gRgcount;}
+	public void setgRgcount(int gRgcount) {this.gRgcount = gRgcount;}
+	public String getgNick() {return gNick;}
+	public void setgNick(String gNick) {this.gNick = gNick;}
+	public Date getgDate() {return gDate;}
+	public void setgDate(Date gDate) {this.gDate = gDate;}
 	
-	public GalleryDTO(int g_id, String g_title, String g_content, int g_rgcount, String g_nick, LocalDate g_date) {
-		super();
-		this.g_id = g_id;
-		this.g_title = g_title;
-		this.g_content = g_content;
-		this.g_rgcount = g_rgcount;
-		this.g_nick = g_nick;
-		this.g_date = g_date;
-	}
+	
+	
+	
+	
+	
 }

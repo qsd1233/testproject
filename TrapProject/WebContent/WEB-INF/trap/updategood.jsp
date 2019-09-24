@@ -11,7 +11,7 @@
   crossorigin="anonymous"></script>
 <script type="text/javascript">
 	function goback() {
-		history.back();
+		location.href = "updateback";
 	}
 </script>  
 </head>
